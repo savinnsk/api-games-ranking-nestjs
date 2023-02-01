@@ -1,11 +1,16 @@
 import { Injectable } from '@nestjs/common';
-
-import { Player } from '../domain/player/interfaces/entities/player.interface';
-import { CreatePlayerDto } from '../domain/player/dtos/create-player.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { CreatePlayerDto } from 'src/domain/dtos/create-player.dto';
+import { IPlayer } from 'src/domain/interfaces/models/player.interface';
+import { Player } from 'src/infra/mongodb/entities/player';
 
 @Injectable()
 export class PlayersService {
-  async createUpdatePlayer(createPlayerDto: CreatePlayerDto): Promise<Player> {
+  constructor(
+    @InjectModel('Player') private readonly playerModel: Model<Player>,
+  ) {}
+  async createUpdatePlayer(createPlayerDto: CreatePlayerDto): Promise<IPlayer> {
     return new Promise((resolve) => resolve(null));
   }
 
