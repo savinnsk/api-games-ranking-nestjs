@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { Player } from '../domain/player/interfaces/player.interface';
+import { Player } from '../domain/player/interfaces/entities/player.interface';
 import { CreatePlayerDto } from '../domain/player/dtos/create-player.dto';
 
 @Injectable()
@@ -15,6 +15,8 @@ export class PlayersService {
 
   async findByPlayEmail(email: string) {
     return new Promise((resolve) => resolve(null));
+
+    //sdasd
   }
 
   async updatePlayer() {
