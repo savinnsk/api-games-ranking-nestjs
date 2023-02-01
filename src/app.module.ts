@@ -3,8 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { env } from '../.env';
 
-import { PlayersModule } from './players/players.module';
-import { PlayersController } from './players/players.controller';
+import { PlayersModule } from './modules/players.module';
+import { PlayersController } from './controllers/players.controller';
 
 @Module({
   imports: [

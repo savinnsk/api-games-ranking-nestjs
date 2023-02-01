@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-import { Player } from './interfaces/player.interface';
-import { CreatePlayerDto } from './dtos/create-player.dto';
+import { Player } from '../domain/player/interfaces/player.interface';
+import { CreatePlayerDto } from '../domain/player/dtos/create-player.dto';
 
 @Injectable()
 export class PlayersService {
